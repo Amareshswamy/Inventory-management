@@ -1,0 +1,62 @@
+<html>
+
+<script>
+	function myfun(){
+	
+		var s1 = document.getElementById("p1").value;
+		if(s1.length==0){
+			alert("Please Enter UserName");
+			return false;
+		
+		}
+		
+	var s2 = document.getElementById("p2").value;
+		if(s2.length==0){
+			alert("Please Enter password");
+			return false;
+		}	
+	
+	}
+
+
+</script>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+
+<body class="align" background= "{% static 'img/bg4.jfif' %}"> 
+<img  >
+  <div class="grid">
+<h1><center><u>Stock Management</u></center></h1>
+    <form action="verify" method="post" class="form login">
+	{% csrf_token %}
+
+
+      <header class="login__header">
+        <h3 class="login__title">Login Here</h3>
+      </header>
+
+      <div class="login__body">
+
+        <div class="form__field">
+        <input type="email" placeholder="username" name="username" id="p1"  >
+        </div>
+
+        <div class="form__field">
+          <input type="password" placeholder="Password" name="password" required id="p2">
+        </div>
+
+      </div>
+
+      <footer class="login__footer">
+      <a href="panal"> <input type="submit" value="Login" onclick="return myfun()" ></a>
+      </footer>
+
+  </div>
+
+</body>
+</body>
+    </form>
+
+</html>

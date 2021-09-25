@@ -1,0 +1,62 @@
+<html>
+<script>
+
+	function myfun(){
+	
+		var s1 = document.getElementById("p1").value;
+		if(s1.length==0){
+			alert("Please Enter All Details");
+			return false;
+		
+		}
+	}	
+</script>
+    <head>
+        <title>add product</title>	
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+    </head>
+	<form action="addproduct" method="post" enctype="multipart/form-data">
+	
+	{% csrf_token %}
+    <body>
+	{% block content %}  
+<div class="registration-form"  >
+    <h2><u>Products Import Form</u></h2>
+<p>Product Name:</p>
+<input type="text" name="pname" placeholder="Enter Product Name" id="p1" >
+<p>Product Id:</p>
+<input type="text" name="pid" placeholder="Enter Product Id" id="p1">
+<p>HSN Code:</p>
+<input type="tel" name="hsn" placeholder="Enter HSN Code" id="p1">
+<p>Quantity:</p>
+<input type="tel" name="qty" placeholder="Enter Quantity" id="p1">
+<p>Price:</p>
+<input type="text" name="price" placeholder="Enter Price" id="p1">
+<p>Date:</p>
+<input type="date" name="date" id="p1">
+<p>Uplode image:</p>
+ 
+<input type="file" name="upload" accept=".doc, .docx, .pdf, .txt">
+              
+
+ 
+
+ {% if file_url %}
+            
+              <img src="{{ file_url }}" >
+              <br>
+           
+            {% else %}
+			<p>No Product image added.</p>
+            {% endif %}
+
+{% endblock %}
+<button type="submit" onclick="return myfun()">Add Product</button>
+</div>
+
+</form>
+  
+    </body>
+</html>

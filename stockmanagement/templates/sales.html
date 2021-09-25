@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>add product</title>	
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+
+    </head>
+	
+	<form action="salesproduct" method="post">
+	{% csrf_token %}
+
+    <body>
+
+<div class="registration-form">
+	
+    <h2><u>Product Sales</u></h2>
+<p>Customer Name:</p>
+<input type="text" name="cname" placeholder="Enter Product Name">
+<p>Product Id:</p>
+<input type="text" name="pid" placeholder="Enter Product Id">
+<p>Quantity:</p>
+<input type="tel" name="qty" placeholder="Enter Quantity">
+<p>Price:</p>
+<input type="text" name="price" placeholder="Enter Price">
+<p>Gst:</p>
+<input type="text" name="gst" placeholder="Enter Gst %">
+
+
+<a href="cart"><button type="submit">CART</button></a>
+
+</div>
+
+   </form>
+   
+    </body>
+	
+</html>
